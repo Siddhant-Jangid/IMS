@@ -2,16 +2,16 @@ import mysql.connector
 
 def remove_item():
     conn = mysql.connector.connect(
-    host = 'localhost',
-    user = 'root',
-    password = '@trishule_1793',
-    database = 'inventory'
+    host = 'hostname',
+    user = 'username',
+    password = 'your_password',
+    database = 'database_name'
     )
 
     cursor = conn.cursor()
 
     id = input("Enter id= \n")
-    query = "DELETE FROM details WHERE id = %s"
+    query = "DELETE FROM table_name WHERE id = %s"
     data = (id,)
     cursor.execute(query,data)
     conn.commit()
