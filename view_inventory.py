@@ -6,15 +6,15 @@ def view_inventory():
     try:
         # Establish connection to MySQL database
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="@trishule_1793",
-            database="inventory"
+            host="hostname",
+            user="username",
+            password="your_password",
+            database="database_name"
         )
 
         cursor = connection.cursor()
         
-        query = "SELECT * FROM details"
+        query = "SELECT * FROM table_name"
         cursor.execute(query)
         
         records = cursor.fetchall()
