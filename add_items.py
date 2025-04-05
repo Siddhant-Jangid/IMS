@@ -2,10 +2,10 @@ import mysql.connector
 
 def add_item():
     conn = mysql.connector.connect(
-    host = 'localhost',
-    user = 'root',
-    password = '@trishule_1793',
-    database = 'inventory'
+    host = 'hostname',
+    user = 'username',
+    password = 'your_password',
+    database = 'database_name'
     )
 
     cursor = conn.cursor()
@@ -15,7 +15,7 @@ def add_item():
     price = input("Enter item's price= \n")
     amount = input("Enter the amount of item= \n")
 
-    query = "INSERT INTO details (ID,name,price,amount) VALUES (%s,%s,%s,%s)"
+    query = "INSERT INTO table_name (ID,name,price,amount) VALUES (%s,%s,%s,%s)"
     data = (id,name,price,amount)
     cursor.execute(query,data)
     conn.commit()
