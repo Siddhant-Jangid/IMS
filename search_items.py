@@ -3,17 +3,17 @@ import mysql.connector
 def search_item_by_id():
     try:
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="@trishule_1793",
-            database="inventory"
+            host="hostname",
+            user="username",
+            password="your_password",
+            database="database_name"
         )
         
         cursor = connection.cursor()
         
         item_id = input("Enter Item ID to search: ")
         
-        query = "SELECT * FROM details WHERE id = %s"
+        query = "SELECT * FROM table_name WHERE id = %s"
         cursor.execute(query, (item_id,))
         
         result = cursor.fetchone()
@@ -38,17 +38,17 @@ def search_item_by_id():
 def search_item_by_name():
     try:
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="@trishule_1793",
-            database="inventory"
+            host="hostname",
+            user="username",
+            password="your_password",
+            database="database_name"
         )
         
         cursor = connection.cursor()
         
         item_name = input("Enter Item name to search: ")
         
-        query = "SELECT * FROM details WHERE name = %s"
+        query = "SELECT * FROM table_name WHERE name = %s"
         cursor.execute(query, (item_name,))
         
         result = cursor.fetchone()
